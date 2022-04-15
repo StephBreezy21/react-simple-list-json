@@ -1,25 +1,49 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const users = [
+    {
+        id: 1,
+        name: 'Robyn Williams',
+        occupation: 'teacher',
+        age: 34,
+        sexe: 'woman',
+    },
+    {
+        id: 2,
+        name: 'John Doe',
+        occupation: 'gardener',
+        age: 25,
+        sexe: 'man',
+    },
+    {
+        id: 3,
+        name: 'Bob Sinclar',
+        occupation: 'DJ',
+        age: 40,
+        sexe: 'man',
+    },
+    {
+        id: 4,
+        name: 'Jayson Stone',
+        occupation: 'Developper',
+        age: 26,
+        sexe: 'man',
+    }
+];
 
-export default App;
+const WordList = () => (
+    <ul>
+        {users.map(user => (
+            <li key={user.id}>
+                <div>{user.id}</div>
+                <div>{user.name}</div>
+                <div>{user.occupation}</div>
+                <div>{user.age}</div>
+                <div>{user.sexe}</div>
+            </li>            
+        ))}        
+    </ul>    
+);
+
+export default WordList;
